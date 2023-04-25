@@ -1,14 +1,18 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
 import Nav from "./Nav";
+import styled from "styled-components";
+
+const AppContainer = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-top: 30rem;
+`;
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
     <>
-      <Box margin="0 auto" maxW="1024px" minH="400px">
-        <Nav />
-        {children}
-      </Box>
+      <Nav />
+      <AppContainer>{children}</AppContainer>
     </>
   );
 }
