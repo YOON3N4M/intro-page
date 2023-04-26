@@ -14,6 +14,8 @@ const StyledNav = styled.div`
   border-radius: 2rem;
   justify-content: space-between;
   border: 0.2rem solid #2a2b37;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 `;
 
 const StyledLogo = styled.div`

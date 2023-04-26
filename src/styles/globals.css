@@ -5,6 +5,31 @@
   font-weight: 700;
   font-style: normal;
 }
+@keyframes backgroundGradient {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+@media (min-width: 375px) {
+  :root {
+    font-size: 16%;
+  }
+}
+@media (min-width: 800px) {
+  :root {
+    font-size: 36%;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 58%;
+  }
+}
+
 html {
   font-size: 58%;
 }
