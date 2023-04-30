@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import IconGitHub from "../icons/IconGithub";
+import IconGitHub from "../icons/IconGitHub";
 import IconInstagram from "../icons/IconInstagram";
-const StyledSection = styled.section`
+import React from "react";
+export const StyledSection = styled.section`
   left: 0;
   right: 0;
   padding: 0 6rem;
@@ -46,7 +47,22 @@ const StyledPic = styled.img`
   width: 40rem;
   margin-top: -10rem;
 `;
+
+interface URLT {
+  github: string;
+  instagram: string;
+}
 export default function Main() {
+  const URL: URLT = {
+    github: "https://github.com/YOON3N4M",
+    instagram: "https://www.instagram.com/yoon3nam/",
+  };
+
+  function openNewWindow(event: any) {
+    console.log(event);
+    //window.open(``, '_blank')}
+  }
+
   return (
     <>
       <StyledSection>
@@ -58,8 +74,12 @@ export default function Main() {
             </StyledSpan>
 
             <SocialContainer>
-              <IconGitHub />
-              <IconInstagram />
+              <a href={URL.github} target="_blank">
+                <IconGitHub />
+              </a>
+              <a href={URL.instagram} target="_blank">
+                <IconInstagram />
+              </a>
             </SocialContainer>
           </div>
           <div>

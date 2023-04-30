@@ -1,4 +1,4 @@
-import Project from "@/components/Project";
+import Project from "@/components/sections/Project";
 import Info from "@/components/sections/Info";
 import styles from "@/styles/Home.module.css";
 import { motion } from "framer-motion";
