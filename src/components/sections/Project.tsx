@@ -6,13 +6,14 @@ import { ProjectT, projects } from "@/Data/projects";
 
 const ProjectCard = styled.div`
   width: 90%;
-  height: 55rem;
-  background-color: #14141413;
+  min-height: 55rem;
+  background-color: #4848481b;
   margin: 0 auto;
   border-radius: 10rem;
   display: flex;
   overflow: hidden;
-  border: 1px solid #91919116;
+  border: 1px solid #91919140;
+  margin-bottom: 10rem;
 `;
 
 const LeftDiv = styled.div`
@@ -48,16 +49,16 @@ const RightDiv = styled.div`
   .link-row {
     display: flex;
     justify-content: space-between;
-    margin-top: 10rem;
+    margin-top: 7rem;
     align-items: center;
   }
-  .link-row > h2 {
+  .link-row > a > h2 {
     cursor: pointer;
     :hover {
       color: #51a7f3;
     }
   }
-  .link-row > div > span {
+  .link-row > div > a > span {
     font-size: 1.6rem;
     margin-right: 1rem;
     cursor: pointer;
@@ -77,6 +78,15 @@ const ProjectImg = styled.img`
     background-color: black;
   }
 `;
+const Type = styled.span`
+  font-size: 1.5rem;
+`;
+
+const Period = styled.span`
+  font-size: 1.5rem;
+  color: gray;
+  margin-bottom: 1rem;
+`;
 
 const ProjectTitle = styled.h1`
   font-size: 4rem;
@@ -87,25 +97,48 @@ const ProjectSkills = styled.span`
   font-size: 1.7rem;
   color: gray;
 `;
+const ProjectHeader = styled.div`
+  width: 100vw;
+  margin-bottom: 13rem;
+  h1 {
+    font-family: "TheJamsil5Bold";
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+  }
+  span {
+    font-size: 2rem;
+  }
+`;
 
 export default function Project() {
   return (
     <>
       <StyledSection>
-        <h1>프로젝트</h1>
+        <ProjectHeader>
+          <h1>Project</h1>
+          <span>틈틈이 개인 프로젝트를 진행하며 학습하고 있습니다.</span>
+        </ProjectHeader>
         {projects.map((project: ProjectT) => (
           <ProjectCard key={project.title}>
             <LeftDiv>
               <ProjectImg width={150} src={project.imgURL} />
             </LeftDiv>
             <RightDiv>
+              <Type>{project.type}</Type>
               <ProjectTitle>{project.title}</ProjectTitle>
+              <Period>{project.period}</Period>
               <ProjectSkills>{project.skills}</ProjectSkills>
               <div className="link-row">
-                <h2>상세</h2>
+                <a href={project.detailURL} target="_blank">
+                  <h2>See Details</h2>
+                </a>
                 <div>
-                  <span>Web</span>
-                  <span>GitHub</span>
+                  <a href={project.webURL} target="_blank">
+                    <span>Web</span>
+                  </a>
+                  <a href={project.gitHubURL} target="_blank">
+                    <span>GitHub</span>
+                  </a>
                 </div>
               </div>
             </RightDiv>

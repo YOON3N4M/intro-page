@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 const AppContainer = styled.div`
   max-width: 110rem;
@@ -14,6 +15,7 @@ export function Layout({ children }: React.PropsWithChildren) {
     <>
       <Nav />
       <AppContainer>{children}</AppContainer>
+      <Footer />
     </>
   );
 }

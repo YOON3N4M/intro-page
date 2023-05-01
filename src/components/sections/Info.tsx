@@ -12,6 +12,7 @@ export const StyledSection = styled.section`
   .flex-box > div {
     flex-grow: 1;
   }
+  margin-bottom: 20rem;
 `;
 
 const StyledH1 = styled.h1`
@@ -53,12 +54,11 @@ interface URLT {
   github: string;
   instagram: string;
 }
+export const URL: URLT = {
+  github: "https://github.com/YOON3N4M",
+  instagram: "https://www.instagram.com/yoon3nam/",
+};
 export default function Main() {
-  const URL: URLT = {
-    github: "https://github.com/YOON3N4M",
-    instagram: "https://www.instagram.com/yoon3nam/",
-  };
-
   function openNewWindow(event: any) {
     console.log(event);
     //window.open(``, '_blank')}
@@ -84,7 +84,9 @@ export default function Main() {
             </SocialContainer>
           </div>
           <div>
+            {/* 
             <StyledPic src="me.jpeg" />
+            */}
           </div>
         </div>
       </StyledSection>
