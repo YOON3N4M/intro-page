@@ -46,6 +46,7 @@ const SocialContainer = styled.div`
 const StyledPic = styled.img`
   width: 40rem;
   margin-top: -10rem;
+  border-radius: 10%;
 `;
 
 interface URLT {
