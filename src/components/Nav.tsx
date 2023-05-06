@@ -15,20 +15,27 @@ const StyledNav = styled.div`
   justify-content: space-between;
   border: 0.2rem solid #2a2b37;
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 3000;
 `;
 
 const StyledLogo = styled.div`
   font-size: 3rem;
   letter-spacing: 0px;
+  cursor: pointer;
 `;
 
-export default function Nav() {
+interface PropsT {
+  setIsMenuOn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Nav({ setIsMenuOn }: PropsT) {
   return (
     <>
       <StyledNav>
         <StyledLogo>YOON3NAM</StyledLogo>
-        <StyledLogo>MENU</StyledLogo>
+        <StyledLogo onClick={() => setIsMenuOn((prev) => !prev)}>
+          MENU
+        </StyledLogo>
       </StyledNav>
     </>
   );

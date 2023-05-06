@@ -19,10 +19,11 @@ const StyledH1 = styled.h1`
   font-size: 7rem;
   font-family: "TheJamsil5Bold";
 
-  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: backgroundGradient 10s infinite linear;
+  //background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  //-webkit-background-clip: text;
+  //-webkit-text-fill-color: transparent;
+  //-webkit-animation: backgroundGradient 10s infinite linear;
+  z-index: 0;
 `;
 const StyledSpan = styled.span<{ fontSize: string }>`
   font-size: ${(props) => props.fontSize};
